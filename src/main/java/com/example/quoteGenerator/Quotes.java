@@ -2,11 +2,22 @@ package com.example.quoteGenerator;
 
 import java.util.List;
 import java.util.Random;
-
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
-
+//quotes api
+//https://api-ninjas.com/api/quotes 
 @Service
 public class Quotes {
+    String apiLink = "https://api.api-ninjas.com/v1/quotes";
+    HttpHeaders headers;
+    HttpEntity<Void> entity;
+
+    public Quotes() {
+        headers = new HttpHeaders();
+        headers.set("X-Api-Key", "key");
+        entity = new HttpEntity<>(headers);
+    }
+
     private final List<String> quotes = List.of(
         "Believe in yourself.",
         "You miss 100% of the shots you don’t take.",
