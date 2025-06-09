@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote of the Day</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Quote Of The Day</h1>
     <!-- quotes corresponds to the name in model attribute--> 
-    <p th:text="${quotes}"></p>
+    <p class="quote" th:text="${quotes}"></p>
+    <br>
+    <p class="author" th:text="'- ' + ${author}"></p>
     <form action="/new" method="get">
         <button type="submit">Generate New Quote</button>
     </form>
