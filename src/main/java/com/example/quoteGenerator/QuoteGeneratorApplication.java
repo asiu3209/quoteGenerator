@@ -11,4 +11,3 @@ public class QuoteGeneratorApplication {
 	}
 
 }
-//test code
